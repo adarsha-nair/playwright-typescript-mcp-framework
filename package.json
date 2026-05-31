@@ -1,0 +1,48 @@
+{
+  "name": "playwright-mcp-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:ui": "npx playwright test --ui",
+    "test:chromium": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit",
+    "test:smoke": "npx playwright test --grep \"@smoke\"",
+    "test:regression": "npx playwright test --grep \"@regression\"",
+    "test:sanity": "npx playwright test --grep \"@sanity\"",
+    "test:report": "npx playwright show-report",
+    "test:install": "npx playwright install",
+    "test:install-deps": "npx playwright install --with-deps",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "lint": "tsc --noEmit",
+    "clean": "rimraf reports dist test-results",
+    "pretest": "npm run clean && mkdir -p reports/screenshots",
+    "posttest": "npx playwright show-report",
+    "ci:test": "CI=true npx playwright test",
+    "generate:report": "node scripts/generate-report.js",
+    "validate": "npm run lint && npm run test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0",
+    "extent": "^0.4.0",
+    "typescript": "^6.0.2"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "playwright": "^1.59.1",
+    "playwright-core": "^1.59.1",
+    "undici-types": "^7.19.2"
+  }
+}

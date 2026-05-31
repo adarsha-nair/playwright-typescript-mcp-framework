@@ -1,0 +1,1220 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\hp\\Desktop\\playwright-mcp-framework\\playwright.config.ts",
+    "rootDir": "C:/Users/hp/Desktop/playwright-mcp-framework/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "C:\\Users\\hp\\Desktop\\playwright-mcp-framework\\global-setup.ts",
+    "globalTeardown": "C:\\Users\\hp\\Desktop\\playwright-mcp-framework\\global-teardown.ts",
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "Test Environment": "SauceDemo",
+      "Application": "Swag Labs",
+      "Base URL": "https://www.saucedemo.com",
+      "Test Type": "E2E Automation",
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/hp/Desktop/playwright-mcp-framework/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Test Environment": "SauceDemo",
+          "Application": "Swag Labs",
+          "Base URL": "https://www.saucedemo.com",
+          "Test Type": "E2E Automation",
+          "actualWorkers": 4
+        },
+        "id": "chromium-desktop",
+        "name": "chromium-desktop",
+        "testDir": "C:/Users/hp/Desktop/playwright-mcp-framework/tests",
+        "testIgnore": [
+          "**/*.mobile.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/hp/Desktop/playwright-mcp-framework/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Test Environment": "SauceDemo",
+          "Application": "Swag Labs",
+          "Base URL": "https://www.saucedemo.com",
+          "Test Type": "E2E Automation",
+          "actualWorkers": 4
+        },
+        "id": "firefox-desktop",
+        "name": "firefox-desktop",
+        "testDir": "C:/Users/hp/Desktop/playwright-mcp-framework/tests",
+        "testIgnore": [
+          "**/*.mobile.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/hp/Desktop/playwright-mcp-framework/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Test Environment": "SauceDemo",
+          "Application": "Swag Labs",
+          "Base URL": "https://www.saucedemo.com",
+          "Test Type": "E2E Automation",
+          "actualWorkers": 4
+        },
+        "id": "webkit-desktop",
+        "name": "webkit-desktop",
+        "testDir": "C:/Users/hp/Desktop/playwright-mcp-framework/tests",
+        "testIgnore": [
+          "**/*.mobile.spec.ts"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/hp/Desktop/playwright-mcp-framework/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Test Environment": "SauceDemo",
+          "Application": "Swag Labs",
+          "Base URL": "https://www.saucedemo.com",
+          "Test Type": "E2E Automation",
+          "actualWorkers": 4
+        },
+        "id": "mobile-chrome",
+        "name": "mobile-chrome",
+        "testDir": "C:/Users/hp/Desktop/playwright-mcp-framework/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.mobile.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/hp/Desktop/playwright-mcp-framework/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Test Environment": "SauceDemo",
+          "Application": "Swag Labs",
+          "Base URL": "https://www.saucedemo.com",
+          "Test Type": "E2E Automation",
+          "actualWorkers": 4
+        },
+        "id": "mobile-safari",
+        "name": "mobile-safari",
+        "testDir": "C:/Users/hp/Desktop/playwright-mcp-framework/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.mobile.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/hp/Desktop/playwright-mcp-framework/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Test Environment": "SauceDemo",
+          "Application": "Swag Labs",
+          "Base URL": "https://www.saucedemo.com",
+          "Test Type": "E2E Automation",
+          "actualWorkers": 4
+        },
+        "id": "performance-chromium",
+        "name": "performance-chromium",
+        "testDir": "C:/Users/hp/Desktop/playwright-mcp-framework/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.performance.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/hp/Desktop/playwright-mcp-framework/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "Test Environment": "SauceDemo",
+          "Application": "Swag Labs",
+          "Base URL": "https://www.saucedemo.com",
+          "Test Type": "E2E Automation",
+          "actualWorkers": 4
+        },
+        "id": "visual-chromium",
+        "name": "visual-chromium",
+        "testDir": "C:/Users/hp/Desktop/playwright-mcp-framework/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.visual.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "reports/test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "reports/test-results.xml"
+        }
+      ],
+      [
+        "C:\\Users\\hp\\Desktop\\playwright-mcp-framework\\config\\extent-reporter.ts",
+        null
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "saucedemo-login.spec.ts",
+      "file": "saucedemo-login.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Sauce Demo Login Tests",
+          "file": "saucedemo-login.spec.ts",
+          "line": 4,
+          "column": 6,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Positive Login Scenarios",
+              "file": "saucedemo-login.spec.ts",
+              "line": 7,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "@smoke should login successfully with standard user credentials",
+                  "ok": true,
+                  "tags": [
+                    "smoke"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 6541,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Starting SauceDemo test suite...\n"
+                            },
+                            {
+                              "text": "Testing environment: local\n"
+                            },
+                            {
+                              "text": "Setting up SauceDemo test: @smoke should login successfully with standard user credentials\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @smoke should login successfully with standard user credentials - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:04.472Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-9610aaed97342e6ff223",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 8,
+                  "column": 9
+                },
+                {
+                  "title": "@regression should login successfully with problem user credentials",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 4436,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should login successfully with problem user credentials\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should login successfully with problem user credentials - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:12.023Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-d640368d75e1582039a0",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 22,
+                  "column": 9
+                },
+                {
+                  "title": "@regression should login successfully with performance glitch user",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 9244,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should login successfully with performance glitch user\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should login successfully with performance glitch user - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:16.549Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-8b658e57a42002fa2dcf",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 35,
+                  "column": 9
+                },
+                {
+                  "title": "@regression should login successfully with error user",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 4034,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should login successfully with error user\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should login successfully with error user - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:25.868Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-ec67f71c09ff1b2c7581",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 48,
+                  "column": 9
+                },
+                {
+                  "title": "@regression should login successfully with visual user",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3688,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should login successfully with visual user\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should login successfully with visual user - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:29.961Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-81590003681d06e8fdc7",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 61,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "Negative Login Scenarios",
+              "file": "saucedemo-login.spec.ts",
+              "line": 75,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "@smoke should show error for locked out user",
+                  "ok": true,
+                  "tags": [
+                    "smoke"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3917,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @smoke should show error for locked out user\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @smoke should show error for locked out user - Status: passed\n"
+                            },
+                            {
+                              "text": "SauceDemo test suite completed.\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:33.696Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-07fa509f88a9737955a7",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 76,
+                  "column": 9
+                },
+                {
+                  "title": "@smoke should show error for invalid username",
+                  "ok": true,
+                  "tags": [
+                    "smoke"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 6616,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Starting SauceDemo test suite...\n"
+                            },
+                            {
+                              "text": "Testing environment: local\n"
+                            },
+                            {
+                              "text": "Setting up SauceDemo test: @smoke should show error for invalid username\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @smoke should show error for invalid username - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:04.435Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-a75970f6eb9c6be301ee",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 89,
+                  "column": 9
+                },
+                {
+                  "title": "@smoke should show error for invalid password",
+                  "ok": true,
+                  "tags": [
+                    "smoke"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 4297,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @smoke should show error for invalid password\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @smoke should show error for invalid password - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:12.061Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-a9e0b1ca648c97e7a6d0",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 102,
+                  "column": 9
+                },
+                {
+                  "title": "@smoke should show error for empty credentials",
+                  "ok": true,
+                  "tags": [
+                    "smoke"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 4109,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @smoke should show error for empty credentials\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @smoke should show error for empty credentials - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:16.454Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-29ff6e05261a4dff9ddc",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 115,
+                  "column": 9
+                },
+                {
+                  "title": "@regression should show error for empty username only",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 3692,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should show error for empty username only\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should show error for empty username only - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:20.684Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-918457e92fc8a88938a1",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 128,
+                  "column": 9
+                },
+                {
+                  "title": "@regression should show error for empty password only",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 3800,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should show error for empty password only\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should show error for empty password only - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:24.412Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-9d2e0a770947d43f4055",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 141,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "Login Page UI Verification",
+              "file": "saucedemo-login.spec.ts",
+              "line": 155,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "@sanity should display all login page elements correctly",
+                  "ok": true,
+                  "tags": [
+                    "sanity"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 1,
+                          "status": "passed",
+                          "duration": 3366,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @sanity should display all login page elements correctly\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @sanity should display all login page elements correctly - Status: passed\n"
+                            },
+                            {
+                              "text": "SauceDemo test suite completed.\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:28.264Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-ee79c90021f49d4ac878",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 156,
+                  "column": 9
+                },
+                {
+                  "title": "@sanity should have correct page title and URL",
+                  "ok": true,
+                  "tags": [
+                    "sanity"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 5506,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Starting SauceDemo test suite...\n"
+                            },
+                            {
+                              "text": "Testing environment: local\n"
+                            },
+                            {
+                              "text": "Setting up SauceDemo test: @sanity should have correct page title and URL\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @sanity should have correct page title and URL - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:04.376Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-6c6e4c422eda318159d4",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 166,
+                  "column": 9
+                },
+                {
+                  "title": "@sanity should enable login button only when credentials are entered",
+                  "ok": true,
+                  "tags": [
+                    "sanity"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 4102,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @sanity should enable login button only when credentials are entered\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @sanity should enable login button only when credentials are entered - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:10.921Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-8697de2fafca4fe948ef",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 172,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "Keyboard Navigation",
+              "file": "saucedemo-login.spec.ts",
+              "line": 191,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "@regression should login using Enter key on password field",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 4053,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should login using Enter key on password field\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should login using Enter key on password field - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:15.147Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-70e7438bad92b6b0683c",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 192,
+                  "column": 9
+                },
+                {
+                  "title": "@regression should navigate between fields using Tab key",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 3376,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should navigate between fields using Tab key\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should navigate between fields using Tab key - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:19.264Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-b22e43fa7ee86efe06d4",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 206,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "Form Validation",
+              "file": "saucedemo-login.spec.ts",
+              "line": 219,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "@regression should clear form data correctly",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 3575,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should clear form data correctly\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should clear form data correctly - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:22.693Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-3276917f7ae997a6ac68",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 220,
+                  "column": 9
+                },
+                {
+                  "title": "@regression should retain form data after failed login",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 2,
+                          "status": "passed",
+                          "duration": 4106,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should retain form data after failed login\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should retain form data after failed login - Status: passed\n"
+                            },
+                            {
+                              "text": "SauceDemo test suite completed.\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:26.306Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-15bed3c2f8382eca1819",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 238,
+                  "column": 9
+                }
+              ]
+            },
+            {
+              "title": "Post-Login Verification",
+              "file": "saucedemo-login.spec.ts",
+              "line": 251,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "@smoke should display correct inventory items after successful login",
+                  "ok": true,
+                  "tags": [
+                    "smoke"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 6605,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Starting SauceDemo test suite...\n"
+                            },
+                            {
+                              "text": "Testing environment: local\n"
+                            },
+                            {
+                              "text": "Setting up SauceDemo test: @smoke should display correct inventory items after successful login\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @smoke should display correct inventory items after successful login - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:04.520Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-9d50ba9d347f826a0c98",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 252,
+                  "column": 9
+                },
+                {
+                  "title": "@regression should display shopping cart after login",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 4470,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should display shopping cart after login\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should display shopping cart after login - Status: passed\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:12.062Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-eaa4656f6e4da77db685",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 267,
+                  "column": 9
+                },
+                {
+                  "title": "@regression should allow adding items to cart after login",
+                  "ok": true,
+                  "tags": [
+                    "regression"
+                  ],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium-desktop",
+                      "projectName": "chromium-desktop",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 3,
+                          "status": "passed",
+                          "duration": 4148,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "Setting up SauceDemo test: @regression should allow adding items to cart after login\n"
+                            },
+                            {
+                              "text": "SauceDemo test completed: @regression should allow adding items to cart after login - Status: passed\n"
+                            },
+                            {
+                              "text": "SauceDemo test suite completed.\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-05-31T05:38:16.638Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "d900de64a91b3c9fcd38-e73a0fb156e4283c3c7c",
+                  "file": "saucedemo-login.spec.ts",
+                  "line": 277,
+                  "column": 9
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-05-31T05:37:52.970Z",
+    "duration": 45069.483,
+    "expected": 21,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

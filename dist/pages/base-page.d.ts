@@ -1,0 +1,45 @@
+import { Page } from '@playwright/test';
+export declare class SauceDemoBasePage {
+    protected page: Page;
+    protected env: import("../config/environments").SauceDemoEnvironmentConfig;
+    constructor(page: Page);
+    navigateToSauceDemo(): Promise<void>;
+    reload(): Promise<void>;
+    click(selector: string): Promise<void>;
+    type(selector: string, text: string): Promise<void>;
+    clearAndType(selector: string, text: string): Promise<void>;
+    selectOption(selector: string, value: string): Promise<void>;
+    waitForElementVisible(selector: string, timeout?: number): Promise<void>;
+    waitForElementHidden(selector: string, timeout?: number): Promise<void>;
+    waitForPageLoad(): Promise<void>;
+    getText(selector: string): Promise<string>;
+    getValue(selector: string): Promise<string>;
+    getAttribute(selector: string, attribute: string): Promise<string | null>;
+    getInnerText(selector: string): Promise<string>;
+    getAllTextContents(selector: string): Promise<string[]>;
+    isVisible(selector: string): Promise<boolean>;
+    isEnabled(selector: string): Promise<boolean>;
+    shouldContainText(selector: string, expectedText: string): Promise<void>;
+    shouldHaveText(selector: string, expectedText: string): Promise<void>;
+    shouldBeVisible(selector: string): Promise<void>;
+    shouldBeHidden(selector: string): Promise<void>;
+    shouldBeEnabled(selector: string): Promise<void>;
+    shouldBeDisabled(selector: string): Promise<void>;
+    press(key: string): Promise<void>;
+    hover(selector: string): Promise<void>;
+    scrollToElement(selector: string): Promise<void>;
+    waitForSauceDemoLoad(): Promise<void>;
+    getCurrentUrl(): Promise<string>;
+    getPageTitle(): Promise<string>;
+    isOnLoginPage(): Promise<boolean>;
+    isOnInventoryPage(): Promise<boolean>;
+    isOnCartPage(): Promise<boolean>;
+    isOnCheckoutPage(): Promise<boolean>;
+    isOnCompletePage(): Promise<boolean>;
+    getErrorMessage(): Promise<string>;
+    hasError(): Promise<boolean>;
+    dismissError(): Promise<void>;
+    takeScreenshot(path?: string): Promise<void>;
+    takeElementScreenshot(selector: string, path?: string): Promise<void>;
+}
+//# sourceMappingURL=base-page.d.ts.map

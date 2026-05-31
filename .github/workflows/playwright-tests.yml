@@ -1,0 +1,275 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run tests daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+        - dev
+        - staging
+        - prod
+      test_category:
+        description: 'Test category to run'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+        - all
+        - smoke
+        - regression
+        - sanity
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
+
+    - name: Cache node modules
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+  test:
+    runs-on: ubuntu-latest
+    needs: install
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
+
+    - name: Set environment
+      run: |
+        echo "NODE_ENV=${{ github.event.inputs.environment || 'dev' }}" >> $GITHUB_ENV
+        echo "CI=true" >> $GITHUB_ENV
+
+    - name: Run Playwright tests
+      run: |
+        if [ "${{ github.event.inputs.test_category }}" = "smoke" ]; then
+          npx playwright test --grep "@smoke"
+        elif [ "${{ github.event.inputs.test_category }}" = "regression" ]; then
+          npx playwright test --grep "@regression"
+        elif [ "${{ github.event.inputs.test_category }}" = "sanity" ]; then
+          npx playwright test --grep "@sanity"
+        else
+          npx playwright test --project=${{ matrix.browser }}
+        fi
+      env:
+        BASE_URL: ${{ secrets.BASE_URL }}
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report-${{ matrix.browser }}
+        path: |
+          reports/
+          test-results/
+          playwright-report/
+
+    - name: Upload screenshots
+      uses: actions/upload-artifact@v3
+      if: failure()
+      with:
+        name: screenshots-${{ matrix.browser }}
+        path: reports/screenshots/
+
+  test-windows:
+    runs-on: windows-latest
+    needs: install
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
+
+    - name: Set environment
+      run: |
+        echo "NODE_ENV=dev" >> $env:GITHUB_ENV
+        echo "CI=true" >> $env:GITHUB_ENV
+
+    - name: Run Playwright tests on Windows
+      run: npx playwright test --project=chromium
+      env:
+        BASE_URL: ${{ secrets.BASE_URL }}
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report-windows
+        path: |
+          reports/
+          test-results/
+          playwright-report/
+
+  test-macos:
+    runs-on: macos-latest
+    needs: install
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
+
+    - name: Set environment
+      run: |
+        echo "NODE_ENV=dev" >> $GITHUB_ENV
+        echo "CI=true" >> $GITHUB_ENV
+
+    - name: Run Playwright tests on macOS
+      run: npx playwright test --project=chromium
+      env:
+        BASE_URL: ${{ secrets.BASE_URL }}
+
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report-macos
+        path: |
+          reports/
+          test-results/
+          playwright-report/
+
+  report:
+    runs-on: ubuntu-latest
+    needs: [test, test-windows, test-macos]
+    if: always()
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+
+    - name: Merge test reports
+      run: |
+        mkdir -p combined-reports
+        find . -name "test-results.json" -exec cp {} combined-reports/ \;
+        find . -name "*.html" -path "*/reports/*" -exec cp {} combined-reports/ \;
+
+    - name: Upload combined reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: combined-test-reports
+        path: combined-reports/
+
+    - name: Comment PR with results
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          let commentBody = '## 🧪 Playwright Test Results\n\n';
+          
+          try {
+            const reports = fs.readdirSync('./combined-reports');
+            reports.forEach(report => {
+              if (report.endsWith('.json')) {
+                const data = JSON.parse(fs.readFileSync(`./combined-reports/${report}`, 'utf8'));
+                commentBody += `### ${report}\n`;
+                commentBody += `- Total: ${data.suites?.[0]?.specs?.length || 0} tests\n`;
+                commentBody += `- ✅ Passed: ${data.suites?.[0]?.specs?.filter(s => s.ok).length || 0}\n`;
+                commentBody += `- ❌ Failed: ${data.suites?.[0]?.specs?.filter(s => !s.ok).length || 0}\n\n`;
+              }
+            });
+          } catch (error) {
+            commentBody += 'Could not parse test results.\n';
+          }
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: commentBody
+          });
+
+  cleanup:
+    runs-on: ubuntu-latest
+    needs: report
+    if: always()
+    steps:
+    - name: Cleanup old artifacts
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            run_id: context.runId,
+          });
+          
+          const oldArtifacts = artifacts.data.artifacts
+            .filter(artifact => artifact.created_at < new Date(Date.now() - 7 * 24 * 60 * 60 * 1000))
+            .map(artifact => artifact.id);
+          
+          for (const artifactId of oldArtifacts) {
+            await github.rest.actions.deleteArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: artifactId,
+            });
+          }
