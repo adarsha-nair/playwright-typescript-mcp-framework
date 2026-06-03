@@ -63,7 +63,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browser: [chromium, firefox, webkit]
+        browser: [chromium-desktop, firefox-desktop, webkit-desktop]
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -141,7 +141,7 @@ jobs:
         echo "CI=true" >> $env:GITHUB_ENV
 
     - name: Run Playwright tests on Windows
-      run: npx playwright test --project=chromium
+      run: npx playwright test --project=chromium-desktop
       env:
         BASE_URL: ${{ secrets.BASE_URL }}
 
@@ -180,7 +180,7 @@ jobs:
         echo "CI=true" >> $GITHUB_ENV
 
     - name: Run Playwright tests on macOS
-      run: npx playwright test --project=chromium
+      run: npx playwright test --project=chromium-desktop
       env:
         BASE_URL: ${{ secrets.BASE_URL }}
 
