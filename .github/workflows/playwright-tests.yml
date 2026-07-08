@@ -1,5 +1,11 @@
 name: Playwright Tests
 
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+  actions: write
+
 on:
   push:
     branches: [ main, develop ]
@@ -43,12 +49,6 @@ jobs:
         node-version: '18'
         cache: 'npm'
 
-    - name: Install dependencies
-      run: npm ci
-
-    - name: Install Playwright browsers
-      run: npx playwright install --with-deps
-
     - name: Cache node modules
       uses: actions/cache@v3
       with:
@@ -56,6 +56,12 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Install Playwright browsers
+      run: npx playwright install --with-deps
 
   test:
     runs-on: ubuntu-latest
@@ -87,11 +93,12 @@ jobs:
 
     - name: Run Playwright tests
       run: |
-        if [ "${{ github.event.inputs.test_category }}" = "smoke" ]; then
+        TEST_CATEGORY="${{ github.event.inputs.test_category || 'all' }}"
+        if [ "$TEST_CATEGORY" = "smoke" ]; then
           npx playwright test --grep "@smoke"
-        elif [ "${{ github.event.inputs.test_category }}" = "regression" ]; then
+        elif [ "$TEST_CATEGORY" = "regression" ]; then
           npx playwright test --grep "@regression"
-        elif [ "${{ github.event.inputs.test_category }}" = "sanity" ]; then
+        elif [ "$TEST_CATEGORY" = "sanity" ]; then
           npx playwright test --grep "@sanity"
         else
           npx playwright test --project=${{ matrix.browser }}
@@ -137,7 +144,7 @@ jobs:
 
     - name: Set environment
       run: |
-        echo "NODE_ENV=dev" >> $env:GITHUB_ENV
+        echo "NODE_ENV=${{ github.event.inputs.environment || 'dev' }}" >> $env:GITHUB_ENV
         echo "CI=true" >> $env:GITHUB_ENV
 
     - name: Run Playwright tests on Windows
@@ -176,7 +183,7 @@ jobs:
 
     - name: Set environment
       run: |
-        echo "NODE_ENV=dev" >> $GITHUB_ENV
+        echo "NODE_ENV=${{ github.event.inputs.environment || 'dev' }}" >> $GITHUB_ENV
         echo "CI=true" >> $GITHUB_ENV
 
     - name: Run Playwright tests on macOS
@@ -204,12 +211,14 @@ jobs:
 
     - name: Download all artifacts
       uses: actions/download-artifact@v4
+      with:
+        path: artifacts
 
     - name: Merge test reports
       run: |
         mkdir -p combined-reports
-        find . -name "test-results.json" -exec cp {} combined-reports/ \;
-        find . -name "*.html" -path "*/reports/*" -exec cp {} combined-reports/ \;
+        find artifacts -name "test-results.json" -exec cp {} combined-reports/ \;
+        find artifacts -name "*.html" -path "*/reports/*" -exec cp {} combined-reports/ \; 2>/dev/null || true
 
     - name: Upload combined reports
       uses: actions/upload-artifact@v4
@@ -256,20 +265,27 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+          const artifacts = await github.rest.actions.listArtifactsForRepo({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            run_id: context.runId,
           });
           
+          const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
           const oldArtifacts = artifacts.data.artifacts
-            .filter(artifact => artifact.created_at < new Date(Date.now() - 7 * 24 * 60 * 60 * 1000))
+            .filter(artifact => new Date(artifact.created_at) < sevenDaysAgo)
             .map(artifact => artifact.id);
           
+          console.log(`Found ${oldArtifacts.length} artifacts older than 7 days`);
+          
           for (const artifactId of oldArtifacts) {
-            await github.rest.actions.deleteArtifact({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              artifact_id: artifactId,
-            });
+            try {
+              await github.rest.actions.deleteArtifact({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                artifact_id: artifactId,
+              });
+              console.log(`Deleted artifact ${artifactId}`);
+            } catch (error) {
+              console.log(`Failed to delete artifact ${artifactId}:`, error.message);
+            }
           }
