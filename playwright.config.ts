@@ -11,16 +11,17 @@ export default defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry configuration for SauceDemo stability */
-  retries: process.env.CI ? 0 : 0,
+  retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI for SauceDemo */
-  workers: process.env.CI ? 2 : undefined,
+  workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters - HTML disabled to fix localhost issue */
   reporter: [
-    ['json', { outputFile: 'reports/test-results.json' }],
-    ['junit', { outputFile: 'reports/test-results.xml' }],
-    ['./config/extent-reporter.ts'],
-    ['list'], // Show test list in console
-  ],
+  ['list'],
+  ['html', { outputFolder: 'playwright-report', open: 'never' }],
+  ['json', { outputFile: 'reports/test-results.json' }],
+  ['junit', { outputFile: 'reports/test-results.xml' }],
+  ['./config/extent-reporter.ts'],
+],
   /* Shared settings for all SauceDemo tests */
   use: {
     /* SauceDemo base URL */
