@@ -132,6 +132,10 @@ export class SauceDemoCartPage extends SauceDemoBasePage {
     expect(itemCount).toBe(0);
   }
 
+  async verifyCartItemCountIsNotDisplayed(): Promise<void> {
+    await expect(this.page.locator(this.cartBadge)).not.toBeVisible();
+  }
+
   async verifyContinueShoppingButtonEnabled(): Promise<void> {
     await this.shouldBeEnabled(this.continueShoppingButton);
   }
