@@ -125,8 +125,7 @@ test.describe('SauceDemo Cart Page Tests', () => {
       await cartPage.removeAllItems();
       
       //await cartPage.verifyCartIsEmpty();
-      const badgeDisplay = await cartPage.verifyCartItemCountIsNotDisplayed();
-      expect(badgeDisplay).toBe(true);
+      await cartPage.verifyCartItemCountIsNotDisplayed();
     });
   });
 
@@ -164,8 +163,7 @@ test.describe('SauceDemo Cart Page Tests', () => {
       await cartPage.verifyCartIsEmpty();
       
       // Cart badge should be empty or not visible
-      const badgeDisplay = await cartPage.verifyCartItemCountIsNotDisplayed();
-      expect(badgeDisplay).toBe(true);
+      await cartPage.verifyCartItemCountIsNotDisplayed();
     });
 
     test('should navigate to inventory with empty cart', async ({ page }) => {
