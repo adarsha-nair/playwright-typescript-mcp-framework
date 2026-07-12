@@ -11,13 +11,12 @@ export class SauceDemoBasePage {
 
   // SauceDemo-specific navigation
   async navigateToSauceDemo(): Promise<void> {
-    await this.page.goto(this.env.baseUrl);
-    await this.page.waitForLoadState('networkidle');
+    await this.page.goto(this.env.baseUrl,{waitUntil: 'domcontentloaded'});
   }
 
   async reload(): Promise<void> {
     await this.page.reload();
-    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForLoadState('domcontentloaded');
   }
 
   // Element interaction methods optimized for SauceDemo
