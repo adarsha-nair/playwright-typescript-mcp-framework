@@ -17,7 +17,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters - HTML disabled to fix localhost issue */
   reporter: [
   ['list'],
-  ['html', { outputFolder: 'playwright-report', open: 'never' }],
+  ['html', { outputFolder: 'reports/html-report', open: 'never' }],
   ['json', { outputFile: 'reports/test-results.json' }],
   ['junit', { outputFile: 'reports/test-results.xml' }],
   ['./config/extent-reporter.ts'],
