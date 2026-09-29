@@ -13,7 +13,7 @@ export default defineConfig({
   /* Retry configuration for SauceDemo stability */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI for SauceDemo */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 2 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters - HTML disabled to fix localhost issue */
   reporter: [
   ['list'],

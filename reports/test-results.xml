@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="21" failures="0" skipped="0" errors="0" time="45.069483">
-<testsuite name="saucedemo-login.spec.ts" timestamp="2026-05-31T05:38:03.396Z" hostname="chromium-desktop" tests="21" failures="0" skipped="0" time="97.681" errors="0">
-<testcase name="Sauce Demo Login Tests › Positive Login Scenarios › @smoke should login successfully with standard user credentials" classname="saucedemo-login.spec.ts" time="6.541">
+<testsuites id="" name="" tests="21" failures="0" skipped="0" errors="0" time="26.023721">
+<testsuite name="saucedemo-login.spec.ts" timestamp="2026-07-19T06:50:48.964Z" hostname="chromium-desktop" tests="21" failures="0" skipped="0" time="34.745" errors="0">
+<testcase name="Sauce Demo Login Tests › Positive Login Scenarios › @smoke should login successfully with standard user credentials" classname="saucedemo-login.spec.ts" time="2.068">
 <system-out>
 <![CDATA[Starting SauceDemo test suite...
 Testing environment: local
@@ -9,35 +9,35 @@ SauceDemo test completed: @smoke should login successfully with standard user cr
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Positive Login Scenarios › @regression should login successfully with problem user credentials" classname="saucedemo-login.spec.ts" time="4.436">
+<testcase name="Sauce Demo Login Tests › Positive Login Scenarios › @regression should login successfully with problem user credentials" classname="saucedemo-login.spec.ts" time="1.408">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should login successfully with problem user credentials
 SauceDemo test completed: @regression should login successfully with problem user credentials - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Positive Login Scenarios › @regression should login successfully with performance glitch user" classname="saucedemo-login.spec.ts" time="9.244">
+<testcase name="Sauce Demo Login Tests › Positive Login Scenarios › @regression should login successfully with performance glitch user" classname="saucedemo-login.spec.ts" time="6.412">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should login successfully with performance glitch user
 SauceDemo test completed: @regression should login successfully with performance glitch user - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Positive Login Scenarios › @regression should login successfully with error user" classname="saucedemo-login.spec.ts" time="4.034">
+<testcase name="Sauce Demo Login Tests › Positive Login Scenarios › @regression should login successfully with error user" classname="saucedemo-login.spec.ts" time="1.189">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should login successfully with error user
 SauceDemo test completed: @regression should login successfully with error user - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Positive Login Scenarios › @regression should login successfully with visual user" classname="saucedemo-login.spec.ts" time="3.688">
+<testcase name="Sauce Demo Login Tests › Positive Login Scenarios › @regression should login successfully with visual user" classname="saucedemo-login.spec.ts" time="1.231">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should login successfully with visual user
 SauceDemo test completed: @regression should login successfully with visual user - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @smoke should show error for locked out user" classname="saucedemo-login.spec.ts" time="3.917">
+<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @smoke should show error for locked out user" classname="saucedemo-login.spec.ts" time="1.262">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @smoke should show error for locked out user
 SauceDemo test completed: @smoke should show error for locked out user - Status: passed
@@ -45,7 +45,7 @@ SauceDemo test suite completed.
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @smoke should show error for invalid username" classname="saucedemo-login.spec.ts" time="6.616">
+<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @smoke should show error for invalid username" classname="saucedemo-login.spec.ts" time="1.998">
 <system-out>
 <![CDATA[Starting SauceDemo test suite...
 Testing environment: local
@@ -54,35 +54,35 @@ SauceDemo test completed: @smoke should show error for invalid username - Status
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @smoke should show error for invalid password" classname="saucedemo-login.spec.ts" time="4.297">
+<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @smoke should show error for invalid password" classname="saucedemo-login.spec.ts" time="1.61">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @smoke should show error for invalid password
 SauceDemo test completed: @smoke should show error for invalid password - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @smoke should show error for empty credentials" classname="saucedemo-login.spec.ts" time="4.109">
+<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @smoke should show error for empty credentials" classname="saucedemo-login.spec.ts" time="1.483">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @smoke should show error for empty credentials
 SauceDemo test completed: @smoke should show error for empty credentials - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @regression should show error for empty username only" classname="saucedemo-login.spec.ts" time="3.692">
+<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @regression should show error for empty username only" classname="saucedemo-login.spec.ts" time="1.334">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should show error for empty username only
 SauceDemo test completed: @regression should show error for empty username only - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @regression should show error for empty password only" classname="saucedemo-login.spec.ts" time="3.8">
+<testcase name="Sauce Demo Login Tests › Negative Login Scenarios › @regression should show error for empty password only" classname="saucedemo-login.spec.ts" time="1.294">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should show error for empty password only
 SauceDemo test completed: @regression should show error for empty password only - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Login Page UI Verification › @sanity should display all login page elements correctly" classname="saucedemo-login.spec.ts" time="3.366">
+<testcase name="Sauce Demo Login Tests › Login Page UI Verification › @sanity should display all login page elements correctly" classname="saucedemo-login.spec.ts" time="1.058">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @sanity should display all login page elements correctly
 SauceDemo test completed: @sanity should display all login page elements correctly - Status: passed
@@ -90,7 +90,7 @@ SauceDemo test suite completed.
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Login Page UI Verification › @sanity should have correct page title and URL" classname="saucedemo-login.spec.ts" time="5.506">
+<testcase name="Sauce Demo Login Tests › Login Page UI Verification › @sanity should have correct page title and URL" classname="saucedemo-login.spec.ts" time="1.336">
 <system-out>
 <![CDATA[Starting SauceDemo test suite...
 Testing environment: local
@@ -99,35 +99,35 @@ SauceDemo test completed: @sanity should have correct page title and URL - Statu
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Login Page UI Verification › @sanity should enable login button only when credentials are entered" classname="saucedemo-login.spec.ts" time="4.102">
+<testcase name="Sauce Demo Login Tests › Login Page UI Verification › @sanity should enable login button only when credentials are entered" classname="saucedemo-login.spec.ts" time="1.213">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @sanity should enable login button only when credentials are entered
 SauceDemo test completed: @sanity should enable login button only when credentials are entered - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Keyboard Navigation › @regression should login using Enter key on password field" classname="saucedemo-login.spec.ts" time="4.053">
+<testcase name="Sauce Demo Login Tests › Keyboard Navigation › @regression should login using Enter key on password field" classname="saucedemo-login.spec.ts" time="1.4">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should login using Enter key on password field
 SauceDemo test completed: @regression should login using Enter key on password field - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Keyboard Navigation › @regression should navigate between fields using Tab key" classname="saucedemo-login.spec.ts" time="3.376">
+<testcase name="Sauce Demo Login Tests › Keyboard Navigation › @regression should navigate between fields using Tab key" classname="saucedemo-login.spec.ts" time="1.077">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should navigate between fields using Tab key
 SauceDemo test completed: @regression should navigate between fields using Tab key - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Form Validation › @regression should clear form data correctly" classname="saucedemo-login.spec.ts" time="3.575">
+<testcase name="Sauce Demo Login Tests › Form Validation › @regression should clear form data correctly" classname="saucedemo-login.spec.ts" time="1.062">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should clear form data correctly
 SauceDemo test completed: @regression should clear form data correctly - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Form Validation › @regression should retain form data after failed login" classname="saucedemo-login.spec.ts" time="4.106">
+<testcase name="Sauce Demo Login Tests › Form Validation › @regression should retain form data after failed login" classname="saucedemo-login.spec.ts" time="1.262">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should retain form data after failed login
 SauceDemo test completed: @regression should retain form data after failed login - Status: passed
@@ -135,7 +135,7 @@ SauceDemo test suite completed.
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Post-Login Verification › @smoke should display correct inventory items after successful login" classname="saucedemo-login.spec.ts" time="6.605">
+<testcase name="Sauce Demo Login Tests › Post-Login Verification › @smoke should display correct inventory items after successful login" classname="saucedemo-login.spec.ts" time="2.035">
 <system-out>
 <![CDATA[Starting SauceDemo test suite...
 Testing environment: local
@@ -144,14 +144,14 @@ SauceDemo test completed: @smoke should display correct inventory items after su
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Post-Login Verification › @regression should display shopping cart after login" classname="saucedemo-login.spec.ts" time="4.47">
+<testcase name="Sauce Demo Login Tests › Post-Login Verification › @regression should display shopping cart after login" classname="saucedemo-login.spec.ts" time="1.538">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should display shopping cart after login
 SauceDemo test completed: @regression should display shopping cart after login - Status: passed
 ]]>
 </system-out>
 </testcase>
-<testcase name="Sauce Demo Login Tests › Post-Login Verification › @regression should allow adding items to cart after login" classname="saucedemo-login.spec.ts" time="4.148">
+<testcase name="Sauce Demo Login Tests › Post-Login Verification › @regression should allow adding items to cart after login" classname="saucedemo-login.spec.ts" time="1.475">
 <system-out>
 <![CDATA[Setting up SauceDemo test: @regression should allow adding items to cart after login
 SauceDemo test completed: @regression should allow adding items to cart after login - Status: passed
